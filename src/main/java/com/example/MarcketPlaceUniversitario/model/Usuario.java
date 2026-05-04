@@ -35,7 +35,7 @@ public class Usuario {
     private LocalDate fechaRegistro;
 
     @OneToMany(mappedBy = "Post_Usuario",cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonManagedReferenceX
     private List<Posts> posts=new ArrayList<>();
 
     @OneToMany(mappedBy = "buyer",cascade = CascadeType.ALL)
@@ -43,5 +43,21 @@ public class Usuario {
 
     @OneToMany(mappedBy = "seller",cascade = CascadeType.ALL)
     private List<PurchaseRequest> ventas;
+
+    @OneToMany(mappedBy = "receiver",cascade = CascadeType.ALL)
+    private List<Message> receivers;
+
+    @OneToMany(mappedBy = "sender",cascade = CascadeType.ALL)
+    private List<Message> senders;
+
+    @OneToMany (mappedBy = "notifications",cascade = CascadeType.ALL)
+    private List<Notification> notifications;
+
+    @OneToMany (mappedBy = "from",cascade = CascadeType.ALL)
+    private List<Ratings> froms;
+
+    @OneToMany (mappedBy = "to",cascade = CascadeType.ALL)
+    private List<Ratings> tos;
+
 
 }

@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.catalina.User;
 
 import java.time.LocalDate;
 
@@ -30,11 +29,11 @@ public class PurchaseRequest {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "seller_id")
-    @JsonBackReference("Puerchase_seller")
-    private User seller;
+    @JsonBackReference("Purchase_seller")
+    private Usuario seller;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "buyer_id")
     @JsonBackReference
-    private User buyer;
+    private Usuario buyer;
 }
