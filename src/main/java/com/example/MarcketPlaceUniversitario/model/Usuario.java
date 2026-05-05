@@ -35,7 +35,7 @@ public class Usuario {
     private LocalDate fechaRegistro;
 
     @OneToMany(mappedBy = "Post_Usuario",cascade = CascadeType.ALL)
-    @JsonManagedReferenceX
+    @JsonManagedReference
     private List<Posts> posts=new ArrayList<>();
 
     @OneToMany(mappedBy = "buyer",cascade = CascadeType.ALL)
