@@ -10,9 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface MessageRepository extends JpaRepository<Message, Long> {
-    @Override
-    Optional<Message> findBymessage(String message);
 
-    @Override
-    Optional<Message> findByDate(LocalDateTime date);
+    //Optional<Message> findByMessage(String message);
+    //Optional<Message> findByDate(LocalDateTime date);
 }

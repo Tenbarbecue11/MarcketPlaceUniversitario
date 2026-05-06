@@ -4,7 +4,7 @@ import com.example.MarcketPlaceUniversitario.model.Message;
 import com.example.MarcketPlaceUniversitario.repository.MessageRepository;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+//import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -37,7 +37,6 @@ public class MessageServiceIMP implements MessageService {
     public Message actualizar(Message message,long id) {
         Message existente=buscarPorId(id);
         existente.setMessage(message.getMessage());
-        existente.setId(message.getId());
         existente.setSender(message.getSender());
         existente.setReceiver(message.getReceiver());
         return messageRepository.save(existente);
@@ -50,9 +49,9 @@ public class MessageServiceIMP implements MessageService {
 
     }
 
-    @Override
-    public Message findBymessage(String message) {
-        return messageRepository.findBymessage(message).orElseThrow(
+    /*@Override
+    public Message findByMessage(String message) {
+        return messageRepository.findByMessage(message).orElseThrow(
                 ()-> new RuntimeException("message no encontrado"));
     }
 
@@ -60,5 +59,5 @@ public class MessageServiceIMP implements MessageService {
     public Message findByDate(LocalDateTime date) {
         return messageRepository.findByDate(date).orElseThrow(
                 ()-> new RuntimeException("message no encontrado"));
-    }
+    }*/
 }

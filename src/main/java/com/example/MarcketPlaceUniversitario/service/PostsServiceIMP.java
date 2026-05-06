@@ -14,7 +14,7 @@ public class PostsServiceIMP implements PostsService {
     }
     @Override
     public Posts save(Posts posts) {
-        return posts;
+        return postRepository.save(posts);
     }
 
     @Override

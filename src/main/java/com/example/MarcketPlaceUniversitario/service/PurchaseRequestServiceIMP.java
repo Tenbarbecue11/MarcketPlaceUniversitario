@@ -37,7 +37,6 @@ public class PurchaseRequestServiceIMP implements PurchaseRequestService{
         existente.setBuyer(purchaseRequest.getBuyer());
         existente.setEstado(purchaseRequest.getEstado());
         existente.setSeller(purchaseRequest.getSeller());
-        existente.setSeller(purchaseRequest.getSeller());
         return purchaseRequestRepository.save(existente);
     }
 

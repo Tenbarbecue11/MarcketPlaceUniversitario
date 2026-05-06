@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class NotificationServiceIMP implements NotificationSerivice {
+public class NotificationServiceIMP implements NotificationService {
     private final NotificationRepository notificationRepository;
     public NotificationServiceIMP(NotificationRepository notificationRepository) {
         this.notificationRepository = notificationRepository;

@@ -11,7 +11,7 @@ public interface MessageService {
     Message buscarPorId(long id);
     Message actualizar(Message message,long id);
     void eliminar(long id);
-    Message findBymessage(String message);
-    Message findByDate(LocalDateTime date);
+    //Message findByMessage(String message);
+    //Message findByDate(LocalDateTime date);
 
 }

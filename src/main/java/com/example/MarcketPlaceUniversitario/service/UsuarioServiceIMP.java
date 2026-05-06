@@ -2,9 +2,11 @@ package com.example.MarcketPlaceUniversitario.service;
 
 import com.example.MarcketPlaceUniversitario.model.Usuario;
 import com.example.MarcketPlaceUniversitario.repository.UsuarioRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+    @Service
 public class UsuarioServiceIMP implements UsuarioService{
     private final UsuarioRepository usuarioRepository;
     public UsuarioServiceIMP(UsuarioRepository usuarioRepository) {
@@ -31,7 +33,7 @@ public class UsuarioServiceIMP implements UsuarioService{
         existente.setCorreo(usuario.getCorreo());
         existente.setFotoPerfil(usuario.getFotoPerfil());
         existente.setPassword(usuario.getPassword());
-        return usuarioRepository.save(usuario);
+        return usuarioRepository.save(existente);
     }
 
     @Override
