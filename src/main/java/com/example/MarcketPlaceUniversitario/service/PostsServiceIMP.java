@@ -18,7 +18,7 @@ public class PostsServiceIMP implements PostsService {
     }
 
     @Override
-    public Posts update(Posts posts) {
+    public Posts update(Posts posts,long id) {
         Posts existente = findById(posts.getId());
         existente.setCategoria(posts.getCategoria());
         existente.setTitulo(posts.getTitulo());

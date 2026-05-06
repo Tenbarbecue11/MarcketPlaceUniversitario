@@ -40,11 +40,11 @@
         @JsonBackReference ("Usuario-Posts")
         private Usuario usuario;
 
-        @OneToMany (mappedBy = "Posts",cascade = CascadeType.ALL)
+        @OneToMany (mappedBy = "posts",cascade = CascadeType.ALL)
         @JsonManagedReference
         private List<PostImagenes> postImagenes=new ArrayList<>();
 
-        @OneToMany (mappedBy = "Posts",cascade = CascadeType.ALL)
+        @OneToMany (mappedBy = "posts",cascade = CascadeType.ALL)
         @JsonManagedReference
         private List<PurchaseRequest> purchaseRequests=new ArrayList<>();
 

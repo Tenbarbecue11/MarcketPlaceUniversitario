@@ -34,7 +34,7 @@ public class Usuario {
     @Column (nullable = false)
     private LocalDate fechaRegistro;
 
-    @OneToMany(mappedBy = "Post_Usuario",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<Posts> posts=new ArrayList<>();
 
@@ -50,7 +50,7 @@ public class Usuario {
     @OneToMany(mappedBy = "sender",cascade = CascadeType.ALL)
     private List<Message> senders;
 
-    @OneToMany (mappedBy = "notifications",cascade = CascadeType.ALL)
+    @OneToMany (mappedBy = "usuario",cascade = CascadeType.ALL)
     private List<Notification> notifications;
 
     @OneToMany (mappedBy = "from",cascade = CascadeType.ALL)

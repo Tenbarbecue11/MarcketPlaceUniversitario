@@ -25,7 +25,7 @@ public class PurchaseRequest {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "post_id", nullable = false)
     @JsonBackReference("Purchase-Post")
-    private Posts post;
+    private Posts posts;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "seller_id")

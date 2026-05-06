@@ -27,7 +27,7 @@ public class PostImagenesServiceIMP implements PostImagenesService {
     }
 
     @Override
-    public PostImagenes update(PostImagenes postImagenes) {
+    public PostImagenes update(PostImagenes postImagenes,long id) {
         PostImagenes existente=findById(postImagenes.getId());
         existente.setPosts(postImagenes.getPosts());
         existente.setUrl(postImagenes.getUrl());

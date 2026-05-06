@@ -33,7 +33,7 @@ public class PurchaseRequestServiceIMP implements PurchaseRequestService{
     @Override
     public PurchaseRequest update(PurchaseRequest purchaseRequest, long id) {
         PurchaseRequest existente=findById(id);
-        existente.setPost(purchaseRequest.getPost());
+        existente.setPosts(purchaseRequest.getPosts());
         existente.setBuyer(purchaseRequest.getBuyer());
         existente.setEstado(purchaseRequest.getEstado());
         existente.setSeller(purchaseRequest.getSeller());
