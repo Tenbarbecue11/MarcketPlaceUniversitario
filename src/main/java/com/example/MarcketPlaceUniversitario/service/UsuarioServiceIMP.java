@@ -2,13 +2,18 @@ package com.example.MarcketPlaceUniversitario.service;
 
 import com.example.MarcketPlaceUniversitario.model.Usuario;
 import com.example.MarcketPlaceUniversitario.repository.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
     @Service
 public class UsuarioServiceIMP implements UsuarioService{
+
     private final UsuarioRepository usuarioRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     public UsuarioServiceIMP(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }

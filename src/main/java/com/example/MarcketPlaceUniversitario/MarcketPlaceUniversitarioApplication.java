@@ -10,6 +10,7 @@ public class MarcketPlaceUniversitarioApplication {
 	public static void main(String[] args) {
 		loadEnv();
 		SpringApplication.run(MarcketPlaceUniversitarioApplication.class, args);
+		System.out.println("MarcketPlaceUniversitarioApplication started");
 	}
 	private static void loadEnv(){
 		Dotenv dotenv = Dotenv.load();
