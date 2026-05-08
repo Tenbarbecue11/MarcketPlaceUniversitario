@@ -1,22 +1,23 @@
 package com.example.MarcketPlaceUniversitario.service;
 
+import com.example.MarcketPlaceUniversitario.DTO.UsuarioRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.UsuarioResponseDTO;
 import com.example.MarcketPlaceUniversitario.model.Usuario;
 import com.example.MarcketPlaceUniversitario.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
     @Service
 public class UsuarioServiceIMP implements UsuarioService{
-
-    private final UsuarioRepository usuarioRepository;
+    @Autowired
+    private UsuarioRepository usuarioRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
-    public UsuarioServiceIMP(UsuarioRepository usuarioRepository) {
-        this.usuarioRepository = usuarioRepository;
-    }
+
 
 
     @Override
@@ -24,10 +25,43 @@ public class UsuarioServiceIMP implements UsuarioService{
         return  usuarioRepository.findById(id).orElseThrow(()->new RuntimeException("Usuario no encontrado"));
     }
 
-    @Override
-    public Usuario save(Usuario usuario) {
-        return usuarioRepository.save(usuario);
-    }
+        @Override
+        public UsuarioResponseDTO save(UsuarioRequestDTO dto) {
+
+            // Validar dominio institucional
+            if (!dto.getCorreo().endsWith("@ucundinamarca.edu.co")) {
+                throw new RuntimeException(
+                        "Correo institucional inválido"
+                );
+            }
+
+            Usuario usuario = new Usuario();
+
+            usuario.setNombre(dto.getNombre());
+
+            usuario.setCorreo(dto.getCorreo());
+
+            // BCrypt
+            usuario.setPassword(
+                    passwordEncoder.encode(dto.getPassword())
+            );
+
+            usuario.setRol("Usuario");
+
+            usuario.setEstado(true);
+
+            usuario.setFechaRegistro(LocalDate.now());
+
+            Usuario guardado = usuarioRepository.save(usuario);
+
+            return new UsuarioResponseDTO(
+                    guardado.getId(),
+                    guardado.getNombre(),
+                    guardado.getCorreo(),
+                    guardado.getRol(),
+                    guardado.getEstado()
+            );
+        }
 
     @Override
     public Usuario update(Usuario usuario,long id) {

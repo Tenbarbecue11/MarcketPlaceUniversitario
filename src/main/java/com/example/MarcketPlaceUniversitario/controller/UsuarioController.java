@@ -1,21 +1,24 @@
 package com.example.MarcketPlaceUniversitario.controller;
 
+import com.example.MarcketPlaceUniversitario.DTO.UsuarioRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.UsuarioResponseDTO;
 import com.example.MarcketPlaceUniversitario.model.Usuario;
 import com.example.MarcketPlaceUniversitario.service.UsuarioService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping ("/api/Usuario")
+@RequestMapping ("/api/usuarios")
 @RestController
 public class UsuarioController {
     @Autowired
     UsuarioService usuarioService;
 
     @PostMapping
-    public Usuario save(Usuario usuario){
-        return usuarioService.save(usuario);
+    public UsuarioResponseDTO save(@Valid @RequestBody UsuarioRequestDTO dto) {
+        return usuarioService.save(dto);
     }
     @GetMapping
     public List<Usuario> findAll(){
