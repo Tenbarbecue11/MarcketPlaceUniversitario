@@ -1,5 +1,7 @@
 package com.example.MarcketPlaceUniversitario.service;
 
+import com.example.MarcketPlaceUniversitario.DTO.LoginRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.LoginResponseDTO;
 import com.example.MarcketPlaceUniversitario.DTO.RegisterRequestDTO;
 import com.example.MarcketPlaceUniversitario.DTO.UsuarioResponseDTO;
 import com.example.MarcketPlaceUniversitario.model.Usuario;
@@ -88,6 +90,34 @@ public class AuthServiceIMP implements AuthService {
                 guardado.getCorreo(),
                 guardado.getRol(),
                 guardado.getEstado()
+        );
+    }
+
+    @Override
+    public LoginResponseDTO login(LoginRequestDTO dto) {
+
+        String correo = dto.getCorreo().toLowerCase();
+
+        //Buscar Usuario
+        Usuario usuario = usuarioRepository
+                .findByCorreo(correo)
+                .orElseThrow(()->new RuntimeException("correo Incorrecto"));
+        //Comparar Contraseña
+        boolean passwordCorrecto = passwordEncoder.matches(dto.getPassword(), usuario.getPassword());
+
+        if (!passwordCorrecto) {
+            throw new RuntimeException("Contraseña incorrecta");
+        }
+        //validar estado
+        if(!usuario.getEstado()) {
+            throw new RuntimeException("El usuario estado no permitido");
+        }
+        return new LoginResponseDTO(
+                usuario.getId(),
+                usuario.getNombre(),
+                usuario.getCorreo(),
+                usuario.getRol(),
+                usuario.getEstado()
         );
     }
 }

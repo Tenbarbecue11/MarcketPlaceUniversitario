@@ -1,5 +1,7 @@
 package com.example.MarcketPlaceUniversitario.controller;
 
+import com.example.MarcketPlaceUniversitario.DTO.LoginRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.LoginResponseDTO;
 import com.example.MarcketPlaceUniversitario.DTO.RegisterRequestDTO;
 import com.example.MarcketPlaceUniversitario.DTO.UsuarioResponseDTO;
 import com.example.MarcketPlaceUniversitario.service.AuthService;
@@ -20,4 +22,10 @@ public class AuthController {
     public UsuarioResponseDTO register(@Valid @RequestBody RegisterRequestDTO dto) {
         return authService.register(dto);
     }
+
+    @PostMapping ("login")
+    public LoginResponseDTO login(@Valid @RequestBody LoginRequestDTO dto) {
+        return authService.login(dto);
+    }
+
 }
