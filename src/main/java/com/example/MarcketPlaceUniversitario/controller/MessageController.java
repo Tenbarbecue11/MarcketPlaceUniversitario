@@ -1,10 +1,11 @@
 package com.example.MarcketPlaceUniversitario.controller;
 
-import com.example.MarcketPlaceUniversitario.model.Message;
+import com.example.MarcketPlaceUniversitario.DTO.MessageRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.MessageResponseDTO;
 import com.example.MarcketPlaceUniversitario.service.MessageService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
-//import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -13,31 +14,31 @@ public class MessageController {
 
     private final MessageService messageService;
 
-    public MessageController(MessageService messageService){
+    public MessageController(MessageService messageService) {
         this.messageService = messageService;
     }
 
     @PostMapping
-    public Message guardarMessage(@RequestBody Message message) {
-        return messageService.guardar(message);
+    public MessageResponseDTO guardarMessage(@Valid @RequestBody MessageRequestDTO dto) {
+        return messageService.guardar(dto);
     }
 
-    @GetMapping ("/{id}")
-    public Message buscarPorId(@PathVariable long id) {
+    @GetMapping("/{id}")
+    public MessageResponseDTO buscarPorId(@PathVariable long id) {
         return messageService.buscarPorId(id);
     }
 
     @PutMapping("/{id}")
-    public Message actualizar(@RequestBody Message message,@PathVariable long id) {
-        return messageService.actualizar(message,id);
+    public MessageResponseDTO actualizar(@Valid @RequestBody MessageRequestDTO dto, @PathVariable long id) {
+        return messageService.actualizar(dto, id);
     }
 
     @GetMapping
-    public List<Message> buscarTodos() {
+    public List<MessageResponseDTO> buscarTodos() {
         return messageService.obtenerTodos();
     }
 
-    @DeleteMapping ("/{id}")
+    @DeleteMapping("/{id}")
     public void eliminar(@PathVariable long id) {
         messageService.eliminar(id);
     }

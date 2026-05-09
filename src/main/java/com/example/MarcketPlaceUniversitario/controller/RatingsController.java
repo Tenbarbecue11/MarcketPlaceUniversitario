@@ -1,40 +1,45 @@
 package com.example.MarcketPlaceUniversitario.controller;
 
-import com.example.MarcketPlaceUniversitario.model.Ratings;
+import com.example.MarcketPlaceUniversitario.DTO.RatingRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.RatingResponseDTO;
 import com.example.MarcketPlaceUniversitario.service.RatingsService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping ("/api/Ratings")
 @RestController
+@RequestMapping("/api/Ratings")
 public class RatingsController {
+
     private final RatingsService ratingsService;
+
     public RatingsController(RatingsService ratingsService) {
         this.ratingsService = ratingsService;
     }
 
     @PostMapping
-    public  Ratings save(@RequestBody Ratings ratings){
-       return ratingsService.save(ratings);
+    public RatingResponseDTO save(@Valid @RequestBody RatingRequestDTO dto) {
+        return ratingsService.save(dto);
     }
 
     @GetMapping
-    public List<Ratings> findAll(){
+    public List<RatingResponseDTO> findAll() {
         return ratingsService.listar();
     }
-    @GetMapping ("/{id}")
-    public Ratings findById(@PathVariable long id){
+
+    @GetMapping("/{id}")
+    public RatingResponseDTO findById(@PathVariable long id) {
         return ratingsService.findById(id);
     }
-    @PutMapping ("/{id}")
-    public Ratings update(@PathVariable long id, @RequestBody Ratings ratings){
-        return ratingsService.update(ratings, id);
+
+    @PutMapping("/{id}")
+    public RatingResponseDTO update(@PathVariable long id, @Valid @RequestBody RatingRequestDTO dto) {
+        return ratingsService.update(dto, id);
     }
-    @DeleteMapping ("/{id}")
-    public void deleteById(@PathVariable long id){
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable long id) {
         ratingsService.delete(id);
     }
-
-
 }

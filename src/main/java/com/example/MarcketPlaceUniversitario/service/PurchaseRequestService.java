@@ -1,13 +1,14 @@
 package com.example.MarcketPlaceUniversitario.service;
 
-import com.example.MarcketPlaceUniversitario.model.PurchaseRequest;
+import com.example.MarcketPlaceUniversitario.DTO.PurchaseRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.PurchaseResponseDTO;
 
 import java.util.List;
 
 public interface PurchaseRequestService {
-    PurchaseRequest findById(long id);
-    PurchaseRequest save(PurchaseRequest purchaseRequest);
-    PurchaseRequest update(PurchaseRequest purchaseRequest,long id);
+    PurchaseResponseDTO findById(long id);
+    PurchaseResponseDTO save(PurchaseRequestDTO dto);
+    PurchaseResponseDTO update(PurchaseRequestDTO dto, long id);
     void delete(long id);
-    List<PurchaseRequest> findAllPurchaseRequests();
+    List<PurchaseResponseDTO> findAllPurchaseRequests();
 }

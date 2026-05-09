@@ -1,14 +1,14 @@
 package com.example.MarcketPlaceUniversitario.service;
 
-import com.example.MarcketPlaceUniversitario.model.Notification;
+import com.example.MarcketPlaceUniversitario.DTO.NotificationRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.NotificationResponseDTO;
 
 import java.util.List;
 
 public interface NotificationService {
-    Notification guardar(Notification notification);
-    List<Notification> obtenerTodos();
-    Notification findById(long id);
-    Notification update(Notification notification,long id);
+    NotificationResponseDTO guardar(NotificationRequestDTO dto);
+    List<NotificationResponseDTO> obtenerTodos();
+    NotificationResponseDTO findById(long id);
+    NotificationResponseDTO update(NotificationRequestDTO dto, long id);
     void deleteById(long id);
-
 }

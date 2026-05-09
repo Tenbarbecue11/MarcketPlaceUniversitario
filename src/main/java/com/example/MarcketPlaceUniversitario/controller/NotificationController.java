@@ -1,38 +1,45 @@
 package com.example.MarcketPlaceUniversitario.controller;
 
-import com.example.MarcketPlaceUniversitario.model.Notification;
+import com.example.MarcketPlaceUniversitario.DTO.NotificationRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.NotificationResponseDTO;
 import com.example.MarcketPlaceUniversitario.service.NotificationService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping ("/api/Notification")
+@RequestMapping("/api/Notification")
 public class NotificationController {
 
     private final NotificationService notificationService;
-    public NotificationController(NotificationService notificationService){
+
+    public NotificationController(NotificationService notificationService) {
         this.notificationService = notificationService;
     }
 
     @PostMapping
-    public Notification guardar(@RequestBody Notification notification) {
-        return notificationService.guardar(notification);
+    public NotificationResponseDTO guardar(@Valid @RequestBody NotificationRequestDTO dto) {
+        return notificationService.guardar(dto);
     }
+
     @GetMapping
-    public List<Notification> obtenerTodos(){
+    public List<NotificationResponseDTO> obtenerTodos() {
         return notificationService.obtenerTodos();
     }
+
     @GetMapping("/{id}")
-    public Notification obtener(@PathVariable long id){
+    public NotificationResponseDTO obtener(@PathVariable long id) {
         return notificationService.findById(id);
     }
-    @PutMapping ("/{id}")
-    public Notification actualizar(@PathVariable long id, @RequestBody Notification notification){
-        return notificationService.update(notification, id);
+
+    @PutMapping("/{id}")
+    public NotificationResponseDTO actualizar(@PathVariable long id, @Valid @RequestBody NotificationRequestDTO dto) {
+        return notificationService.update(dto, id);
     }
-    @DeleteMapping ("/{id}")
-    public void eliminar(@PathVariable long id){
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable long id) {
         notificationService.deleteById(id);
     }
 }
