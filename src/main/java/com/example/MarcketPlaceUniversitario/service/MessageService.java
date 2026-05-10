@@ -1,19 +1,14 @@
 package com.example.MarcketPlaceUniversitario.service;
 
-import com.example.MarcketPlaceUniversitario.model.Message;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import com.example.MarcketPlaceUniversitario.DTO.MessageRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.MessageResponseDTO;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 public interface MessageService {
-    Message guardar(Message message);
-    List<Message> obtenerTodos();
-    Message buscarPorId(long id);
-    Message actualizar(Message message,long id);
+    MessageResponseDTO guardar(MessageRequestDTO dto);
+    List<MessageResponseDTO> obtenerTodos();
+    MessageResponseDTO buscarPorId(long id);
+    MessageResponseDTO actualizar(MessageRequestDTO dto, long id);
     void eliminar(long id);
-    //Message findByMessage(String message);
-    //Message findByDate(LocalDateTime date);
-
 }
