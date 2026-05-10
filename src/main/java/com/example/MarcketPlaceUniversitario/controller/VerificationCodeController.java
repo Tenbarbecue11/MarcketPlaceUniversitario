@@ -4,8 +4,8 @@
 
 package com.example.MarcketPlaceUniversitario.controller;
 
-import com.example.MarcketPlaceUniversitario.DTO.SendCodeRequestDTO;
-import com.example.MarcketPlaceUniversitario.DTO.VerifyCodeRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoExtra.SendCodeRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoExtra.VerifyCodeRequestDTO;
 import com.example.MarcketPlaceUniversitario.service.VerificationCodeService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

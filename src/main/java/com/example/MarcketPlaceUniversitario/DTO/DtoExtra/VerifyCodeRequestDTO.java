@@ -2,7 +2,7 @@
 // DTO - VerifyCodeRequestDTO
 // ===============================
 
-package com.example.MarcketPlaceUniversitario.DTO;
+package com.example.MarcketPlaceUniversitario.DTO.DtoExtra;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;

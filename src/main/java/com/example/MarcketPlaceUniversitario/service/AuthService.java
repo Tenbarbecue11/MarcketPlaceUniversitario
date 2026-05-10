@@ -1,9 +1,9 @@
 package com.example.MarcketPlaceUniversitario.service;
 
-import com.example.MarcketPlaceUniversitario.DTO.LoginRequestDTO;
-import com.example.MarcketPlaceUniversitario.DTO.LoginResponseDTO;
-import com.example.MarcketPlaceUniversitario.DTO.RegisterRequestDTO;
-import com.example.MarcketPlaceUniversitario.DTO.UsuarioResponseDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoExtra.LoginRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoExtra.LoginResponseDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoExtra.RegisterRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.UsuarioResponseDTO;
 
 public interface AuthService {
     UsuarioResponseDTO register(RegisterRequestDTO dto);

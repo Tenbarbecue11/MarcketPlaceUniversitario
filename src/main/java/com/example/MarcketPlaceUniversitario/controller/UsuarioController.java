@@ -1,7 +1,7 @@
 package com.example.MarcketPlaceUniversitario.controller;
 
-import com.example.MarcketPlaceUniversitario.DTO.UsuarioRequestDTO;
-import com.example.MarcketPlaceUniversitario.DTO.UsuarioResponseDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.UsuarioRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.UsuarioResponseDTO;
 import com.example.MarcketPlaceUniversitario.model.Usuario;
 import com.example.MarcketPlaceUniversitario.service.UsuarioService;
 import jakarta.validation.Valid;

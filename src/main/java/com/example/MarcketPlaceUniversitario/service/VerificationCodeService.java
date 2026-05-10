@@ -4,8 +4,8 @@
 
 package com.example.MarcketPlaceUniversitario.service;
 
-import com.example.MarcketPlaceUniversitario.DTO.SendCodeRequestDTO;
-import com.example.MarcketPlaceUniversitario.DTO.VerifyCodeRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoExtra.SendCodeRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoExtra.VerifyCodeRequestDTO;
 
 public interface VerificationCodeService {
 

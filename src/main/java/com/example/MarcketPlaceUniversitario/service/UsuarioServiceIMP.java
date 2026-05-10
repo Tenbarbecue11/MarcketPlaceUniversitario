@@ -1,7 +1,7 @@
 package com.example.MarcketPlaceUniversitario.service;
 
-import com.example.MarcketPlaceUniversitario.DTO.UsuarioRequestDTO;
-import com.example.MarcketPlaceUniversitario.DTO.UsuarioResponseDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.UsuarioRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.UsuarioResponseDTO;
 import com.example.MarcketPlaceUniversitario.model.Usuario;
 import com.example.MarcketPlaceUniversitario.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
