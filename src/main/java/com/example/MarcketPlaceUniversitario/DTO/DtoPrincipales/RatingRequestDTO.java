@@ -1,4 +1,4 @@
-package com.example.MarcketPlaceUniversitario.DTO;
+package com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales;
 
 import jakarta.validation.constraints.*;
 import lombok.Data;

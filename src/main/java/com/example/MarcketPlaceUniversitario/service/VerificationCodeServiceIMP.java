@@ -36,10 +36,10 @@ public class VerificationCodeServiceIMP
         String correo = dto.getCorreo().toLowerCase();
 
         // validar dominio institucional
-        if (!correo.endsWith("@gmail.com")) {
-            throw new RuntimeException(
-                    "Debe usar un correo institucional"
-            );
+        String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+
+        if (!correo.matches(regex)) {
+            throw new RuntimeException("Correo inválido");
         }
 
         // validar correo repetido

@@ -1,7 +1,7 @@
 package com.example.MarcketPlaceUniversitario.service;
 
-import com.example.MarcketPlaceUniversitario.DTO.PurchaseRequestDTO;
-import com.example.MarcketPlaceUniversitario.DTO.PurchaseResponseDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.PurchaseRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.PurchaseResponseDTO;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
 package com.example.MarcketPlaceUniversitario.service;
 
-import com.example.MarcketPlaceUniversitario.DTO.PostImagenResponseDTO;
-import com.example.MarcketPlaceUniversitario.DTO.PostRequestDTO;
-import com.example.MarcketPlaceUniversitario.DTO.PostResponseDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.PostImagenResponseDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.PostRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.PostResponseDTO;
 import com.example.MarcketPlaceUniversitario.model.Posts;
 import com.example.MarcketPlaceUniversitario.model.Usuario;
 import com.example.MarcketPlaceUniversitario.repository.PostRepository;

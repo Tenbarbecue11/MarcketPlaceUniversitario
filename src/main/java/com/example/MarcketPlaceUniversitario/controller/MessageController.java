@@ -1,7 +1,7 @@
 package com.example.MarcketPlaceUniversitario.controller;
 
-import com.example.MarcketPlaceUniversitario.DTO.MessageRequestDTO;
-import com.example.MarcketPlaceUniversitario.DTO.MessageResponseDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.MessageRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.MessageResponseDTO;
 import com.example.MarcketPlaceUniversitario.service.MessageService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;

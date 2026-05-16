@@ -1,7 +1,7 @@
 package com.example.MarcketPlaceUniversitario.controller;
 
-import com.example.MarcketPlaceUniversitario.DTO.PurchaseRequestDTO;
-import com.example.MarcketPlaceUniversitario.DTO.PurchaseResponseDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.PurchaseRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.PurchaseResponseDTO;
 import com.example.MarcketPlaceUniversitario.service.PurchaseRequestService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;

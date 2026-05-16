@@ -1,7 +1,7 @@
 package com.example.MarcketPlaceUniversitario.service;
 
-import com.example.MarcketPlaceUniversitario.DTO.NotificationRequestDTO;
-import com.example.MarcketPlaceUniversitario.DTO.NotificationResponseDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.NotificationRequestDTO;
+import com.example.MarcketPlaceUniversitario.DTO.DtoPrincipales.NotificationResponseDTO;
 import com.example.MarcketPlaceUniversitario.model.Notification;
 import com.example.MarcketPlaceUniversitario.model.Usuario;
 import com.example.MarcketPlaceUniversitario.repository.NotificationRepository;

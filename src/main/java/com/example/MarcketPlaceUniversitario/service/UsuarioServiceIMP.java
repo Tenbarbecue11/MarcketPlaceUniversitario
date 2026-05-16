@@ -22,7 +22,8 @@ public class UsuarioServiceIMP implements UsuarioService{
 
     @Override
     public Usuario findById(long id) {
-        return  usuarioRepository.findById(id).orElseThrow(()->new RuntimeException("Usuario no encontrado"));
+        return  usuarioRepository.findById(id)
+                .orElseThrow(()->new RuntimeException("Usuario no encontrado"));
     }
 
         @Override
@@ -65,14 +66,14 @@ public class UsuarioServiceIMP implements UsuarioService{
 
     @Override
     public Usuario update(Usuario usuario,long id) {
-        Usuario existente=findById(id);
-        existente.setNombre(usuario.getNombre());
-        existente.setEstado(usuario.getEstado());
-        existente.setCompras(usuario.getCompras());
-        existente.setCorreo(usuario.getCorreo());
-        existente.setFotoPerfil(usuario.getFotoPerfil());
-        existente.setPassword(usuario.getPassword());
-        return usuarioRepository.save(existente);
+            Usuario existente=findById(id);
+            existente.setNombre(usuario.getNombre());
+            existente.setEstado(usuario.getEstado());
+            existente.setCompras(usuario.getCompras());
+            existente.setCorreo(usuario.getCorreo());
+            existente.setFotoPerfil(usuario.getFotoPerfil());
+            existente.setPassword(usuario.getPassword());
+            return usuarioRepository.save(existente);
     }
 
     @Override
